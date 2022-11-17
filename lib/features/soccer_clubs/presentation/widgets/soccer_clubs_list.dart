@@ -25,7 +25,7 @@ class _SoccerClubsListView extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 10),
                   child: Image.network(
                     soccerClubDetails.imageUrl,
-                    height: 100,
+                    width: 100,
                   ),
                 ),
                 Expanded(
@@ -45,10 +45,13 @@ class _SoccerClubsListView extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: Text(
-                          AppLocalizations.of(context)!
-                              .soccerClubValue(soccerClubDetails.value),
-                          style: const TextStyle(fontSize: 16),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .soccerClubValue(soccerClubDetails.value),
+                            style: const TextStyle(fontSize: 16),
+                          ),
                         ),
                       ),
                     ],
