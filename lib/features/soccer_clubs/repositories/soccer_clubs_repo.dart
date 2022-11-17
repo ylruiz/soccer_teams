@@ -22,6 +22,7 @@ class SoccerClubsRepo {
           List<SoccerClubModel> soccerClubs = success.data
               .map<SoccerClubModel>((club) => SoccerClubModel.fromJson(club))
               .toList();
+          soccerClubs.sort((a, b) => a.name.compareTo(b.name));
           return Right(soccerClubs);
         }
       },

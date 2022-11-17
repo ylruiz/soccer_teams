@@ -24,17 +24,20 @@ class SoccerClubsState extends Equatable {
         loadedState,
         soccerClubs,
         error,
+        isSortAscending,
       ];
 
   SoccerClubsState copyWith({
     LoadedState? loadedState,
     List<SoccerClubModel>? soccerClubs,
     String? error,
+    bool? isSortAscending,
   }) {
     return SoccerClubsState(
       loadedState: loadedState ?? this.loadedState,
       soccerClubs: soccerClubs ?? this.soccerClubs,
       error: error ?? this.error,
+      isSortAscending: isSortAscending ?? this.isSortAscending,
     );
   }
 }

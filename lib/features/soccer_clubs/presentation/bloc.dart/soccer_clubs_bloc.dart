@@ -12,6 +12,7 @@ class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
   SoccerClubsBloc()
       : super(const SoccerClubsState(loadedState: LoadedState.loading)) {
     on<LoadSoccerClubs>((event, emit) async => emit(await _loadSoccerClubs()));
+    on<SortSoccerClubsList>((event, emit) => emit(_sortSoccerClubs()));
   }
 
   Future<SoccerClubsState> _loadSoccerClubs() async {
@@ -25,6 +26,22 @@ class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
         loadedState: LoadedState.loaded,
         soccerClubs: soccerClubs,
       ),
+    );
+  }
+
+  SoccerClubsState _sortSoccerClubs() {
+    final sortedSoccerClubsByValue = List.of(state.soccerClubs);
+    final isSortAscending = state.isSortAscending;
+
+    if (isSortAscending) {
+      sortedSoccerClubsByValue.sort((a, b) => b.value.compareTo(a.value));
+    } else {
+      sortedSoccerClubsByValue.sort((a, b) => a.name.compareTo(b.name));
+    }
+
+    return state.copyWith(
+      soccerClubs: sortedSoccerClubsByValue,
+      isSortAscending: !isSortAscending,
     );
   }
 }
