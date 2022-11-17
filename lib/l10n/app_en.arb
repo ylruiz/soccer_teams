@@ -39,5 +39,14 @@
         "example": "2"
       }
     }
+  },
+  "soccerClubValue": "{value} Million", 
+  "@soccerClubValue": {
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "200"
+      }
+    }
   }
 }

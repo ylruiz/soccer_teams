@@ -53,6 +53,7 @@ class SoccerClubsApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           // The Color(0x0001c13b) is not working as expected.
           primary: Colors.green,
+          
         ),
       ),
       routerConfig: _router,

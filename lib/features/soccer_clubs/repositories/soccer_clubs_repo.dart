@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 
 import '../../../core/network/api_connection_exception.dart';
@@ -21,8 +19,7 @@ class SoccerClubsRepo {
         if (success.data.isEmpty) {
           return const Right([]);
         } else {
-          List<SoccerClubModel> soccerClubs = json
-              .decode(success.data)
+          List<SoccerClubModel> soccerClubs = success.data
               .map<SoccerClubModel>((club) => SoccerClubModel.fromJson(club))
               .toList();
           return Right(soccerClubs);

@@ -11,14 +11,7 @@ part 'soccer_clubs_state.dart';
 class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
   SoccerClubsBloc()
       : super(const SoccerClubsState(loadedState: LoadedState.loading)) {
-    // ignore: void_checks
-    on<SoccerClubsEvent>((event, emit) async* {
-      switch (event.runtimeType) {
-        case LoadSoccerClubs:
-          yield await _loadSoccerClubs();
-          break;
-      }
-    });
+    on<LoadSoccerClubs>((event, emit) async => emit(await _loadSoccerClubs()));
   }
 
   Future<SoccerClubsState> _loadSoccerClubs() async {
