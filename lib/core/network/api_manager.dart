@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 import 'api_connection_exception.dart';
 
-/// Should handle the API connections depending on the respective 
+/// Should handle the API connections depending on the respective
 /// request:
 /// - GET [getRequest]
 /// - POST [postRequest] -> Should be implemented when needed

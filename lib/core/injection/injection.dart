@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/soccer_clubs/presentation/bloc.dart/soccer_clubs_bloc.dart';
+import '../../features/soccer_clubs/presentation/bloc/soccer_clubs_bloc.dart';
 import '../../features/soccer_clubs/repositories/soccer_clubs_repo.dart';
 import '../network/api_manager.dart';
 

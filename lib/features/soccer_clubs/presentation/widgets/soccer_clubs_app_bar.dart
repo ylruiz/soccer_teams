@@ -1,4 +1,7 @@
-part of '../screens/soccer_clubs.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../core/injection/injection.dart';
+import '../bloc/soccer_clubs_bloc.dart';
 
 class SortingIconButton extends StatefulWidget {
   const SortingIconButton({super.key});
@@ -10,13 +13,13 @@ class SortingIconButton extends StatefulWidget {
 class _SortingIconButtonState extends State<SortingIconButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _sortController;
-  bool _isSortAscending = sl<SoccerClubsBloc>().state.isSortAscending;
 
   @override
   void initState() {
     _sortController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 100),
+      duration: const Duration(milliseconds: 300),
+      upperBound: 0.5,
     );
     super.initState();
   }
@@ -29,25 +32,22 @@ class _SortingIconButtonState extends State<SortingIconButton>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _sortController,
-      builder: (_, __) {
-        return RotatedBox(
-          quarterTurns: _isSortAscending ? 0 : 2,
-          child: IconButton(
-            onPressed: _sortSoccerClubs,
-            icon: const Icon(Icons.filter_list),
-          ),
-        );
-      },
+    return RotationTransition(
+      turns: Tween(begin: 0.0, end: 1.0).animate(_sortController),
+      child: IconButton(
+        onPressed: _sortSoccerClubs,
+        icon: const Icon(Icons.filter_list),
+      ),
     );
   }
 
   void _sortSoccerClubs() {
+    final soccerClubsBloc = sl<SoccerClubsBloc>();
     setState(() {
-      _isSortAscending ? _sortController.reverse() : _sortController.forward();
-      _isSortAscending = !_isSortAscending;
+      soccerClubsBloc.state.isSortAscending
+          ? _sortController.reverse()
+          : _sortController.forward();
     });
-    sl<SoccerClubsBloc>().add(SortSoccerClubsList());
+    soccerClubsBloc.add(SortSoccerClubsList());
   }
 }

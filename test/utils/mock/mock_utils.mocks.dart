@@ -20,7 +20,7 @@ import 'package:yunet_coding_challenge/core/network/api_connection_exception.dar
 import 'package:yunet_coding_challenge/core/network/api_manager.dart' as _i16;
 import 'package:yunet_coding_challenge/features/soccer_clubs/models/soccer_club_model.dart'
     as _i13;
-import 'package:yunet_coding_challenge/features/soccer_clubs/presentation/bloc.dart/soccer_clubs_bloc.dart'
+import 'package:yunet_coding_challenge/features/soccer_clubs/presentation/bloc/soccer_clubs_bloc.dart'
     as _i2;
 import 'package:yunet_coding_challenge/features/soccer_clubs/repositories/soccer_clubs_repo.dart'
     as _i11;

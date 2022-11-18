@@ -10,4 +10,3 @@ abstract class SoccerClubsEvent extends Equatable {
 class LoadSoccerClubs extends SoccerClubsEvent {}
 
 class SortSoccerClubsList extends SoccerClubsEvent {}
-

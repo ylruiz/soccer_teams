@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/injection/injection.dart';
 import 'core/navigation/router.dart';
-import 'features/soccer_clubs/presentation/bloc.dart/soccer_clubs_bloc.dart';
+import 'features/soccer_clubs/presentation/bloc/soccer_clubs_bloc.dart';
 
 void main() async {
   await setUpServiceLocator();
@@ -30,7 +30,6 @@ class SoccerClubsApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           // The Color(0x0001c13b) is not working as expected.
           primary: Colors.green,
-          
         ),
       ),
       routerConfig: router(),
@@ -42,7 +41,7 @@ class SoccerClubsApp extends StatelessWidget {
       ],
       locale: const Locale('de', ''),
       supportedLocales: const [
-        Locale('de', ''), 
+        Locale('de', ''),
         Locale('en', ''),
         Locale('pl', ''),
       ],
