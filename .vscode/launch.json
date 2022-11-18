@@ -1,0 +1,31 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "yunet_coding_challenge",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "yunet_coding_challenge (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "yunet_coding_challenge (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "yunet_coding_challenge (test)",
+      "request": "launch",
+      "type": "dart",
+      "program": "./test/"
+    }
+  ]
+}

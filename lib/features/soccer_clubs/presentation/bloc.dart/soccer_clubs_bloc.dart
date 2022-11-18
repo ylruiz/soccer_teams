@@ -15,8 +15,7 @@ part 'soccer_clubs_state.dart';
 ///   * [SoccerClubsRepo], which acts as intermediary between
 ///     [SoccerClubsBloc] and [ApiManager].
 class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
-  SoccerClubsBloc()
-      : super(const SoccerClubsState(loadedState: LoadedState.loading)) {
+  SoccerClubsBloc() : super(const SoccerClubsState()) {
     on<LoadSoccerClubs>((event, emit) async => emit(await _loadSoccerClubs()));
     on<SortSoccerClubsList>((event, emit) => emit(_sortSoccerClubs()));
   }

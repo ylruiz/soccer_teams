@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:styled_text/styled_text.dart';
 
-import '../../../../core/paths.dart';
+import '../../../../core/navigation/paths.dart';
 import '../../models/soccer_club_model.dart';
 import '../widgets/soccer_club_image.dart';
 

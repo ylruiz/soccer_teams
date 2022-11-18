@@ -8,7 +8,7 @@ enum LoadedState {
 
 class SoccerClubsState extends Equatable {
   const SoccerClubsState({
-    required this.loadedState,
+    this.loadedState = LoadedState.loading,
     this.soccerClubs = const [],
     this.error = '',
     this.isSortAscending = true,
