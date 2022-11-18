@@ -3,6 +3,12 @@ import 'package:dio/dio.dart';
 
 import 'api_connection_exception.dart';
 
+/// Should handle the API connections depending on the respective 
+/// request:
+/// - GET [getRequest]
+/// - POST [postRequest] -> Should be implemented when needed
+/// - DELETE [deleteRequest] -> Should be implemented when needed
+/// - PUT [putRequest] -> Should be implemented when needed
 class ApiManager {
   ApiManager(this._client);
 

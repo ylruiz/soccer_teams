@@ -8,6 +8,12 @@ import '../../repositories/soccer_clubs_repo.dart';
 part 'soccer_clubs_event.dart';
 part 'soccer_clubs_state.dart';
 
+/// [SoccerClubsBloc] manages the state related to
+/// [SoccerClubsScreen].
+///
+/// See also:
+///   * [SoccerClubsRepo], which acts as intermediary between
+///     [SoccerClubsBloc] and [ApiManager].
 class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
   SoccerClubsBloc()
       : super(const SoccerClubsState(loadedState: LoadedState.loading)) {
