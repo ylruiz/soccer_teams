@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:styled_text/styled_text.dart';
 
+import '../../../../core/paths.dart';
 import '../../models/soccer_club_model.dart';
+import '../widgets/soccer_club_image.dart';
 
 class SoccerClubDetailsScreen extends StatelessWidget {
   const SoccerClubDetailsScreen({
@@ -21,36 +24,58 @@ class SoccerClubDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => context.go(Paths.soccerClubs),
+          icon: const Icon(Icons.arrow_back),
+        ),
+        centerTitle: false,
         title: Text(name),
       ),
       body: Column(
         children: [
-          Stack(
-            children: [
-              Image.network(soccerClubDetails.imageUrl),
-              Positioned(
-                left: 10,
-                bottom: 0,
-                child: Text(country),
-              )
-            ],
-          ),
-          StyledText(
-            text: loca.soccerClubDetails(
-              name,
-              country,
-              soccerClubDetails.value,
+          Container(
+            color: Colors.grey[800],
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 2,
+            child: Stack(
+              children: [
+                Center(child: SoccerClubImage(soccerClubDetails.imageUrl)),
+                Positioned(
+                  left: 10,
+                  bottom: 10,
+                  child: Text(
+                    country,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      fontSize: 20,
+                    ),
+                  ),
+                )
+              ],
             ),
-            tags: {
-              'strong': StyledTextTag(
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-            },
           ),
-          Text(
-            europeanTitles == 1
-                ? loca.soccerClubOneVictory(name)
-                : loca.soccerClubVictories(name, europeanTitles),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: StyledText(
+              text: loca.soccerClubDetails(
+                name,
+                country,
+                soccerClubDetails.value,
+              ),
+              tags: {
+                'strong': StyledTextTag(
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              europeanTitles == 1
+                  ? loca.soccerClubOneVictory(name)
+                  : loca.soccerClubVictories(name, europeanTitles),
+            ),
           ),
         ],
       ),

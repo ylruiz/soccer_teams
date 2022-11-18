@@ -23,10 +23,7 @@ class _SoccerClubsListView extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: Image.network(
-                    soccerClubDetails.imageUrl,
-                    width: 100,
-                  ),
+                  child: SoccerClubImage(soccerClubDetails.imageUrl),
                 ),
                 Expanded(
                   child: Column(

@@ -7,6 +7,7 @@ import '../../../../core/injection/injection.dart';
 import '../../../../core/paths.dart';
 import '../../models/soccer_club_model.dart';
 import '../bloc.dart/soccer_clubs_bloc.dart';
+import '../widgets/soccer_club_image.dart';
 
 part '../widgets/sorting_icon_button.dart';
 part '../widgets/loading_progress.dart';
