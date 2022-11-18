@@ -1,0 +1,52 @@
+{
+    "allAboutClubs": "all about clubs",
+    "soccerClubsNoFound": "Es wurden keine Fußballvereine gefunden.",
+    "soccerClubDetails": "Der Club <strong>{name}</strong> aus {country} hat einen Wert von {value} Millionen Euro.",
+    "@soccerClubDetails": {
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Real Madrid"
+        },
+        "country": {
+          "type": "String",
+          "example": "Spain"
+        },
+        "value": {
+          "type": "int",
+          "example": "100"
+        }
+      }
+    },
+    "soccerClubOneVictory": "{name} konnte bislang 1 Seig auf europäischer Ebene erreichen.",
+    "@soccerClubOneVictory": {
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Real Madrid"
+        }
+      }
+    },
+    "soccerClubVictories": "{name} konnte bislang {europeanTitles} auf europäischer Ebene erreichen.",
+    "@soccerClubVictories": {
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Real Madrid"
+        },
+        "europeanTitles": {
+          "type": "int",
+          "example": "2"
+        }
+      }
+    },
+    "soccerClubValue": "{value} Millionen", 
+    "@soccerClubValue": {
+      "placeholders": {
+        "value": {
+          "type": "int",
+          "example": "200"
+        }
+      }
+    }
+  }

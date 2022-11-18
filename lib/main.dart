@@ -63,6 +63,7 @@ class SoccerClubsApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      locale: const Locale('de', ''),
       supportedLocales: const [
         Locale('de', ''), 
         Locale('en', ''),
