@@ -28,8 +28,7 @@ class SoccerClubsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: const ColorScheme.light(
-          // The Color(0x0001c13b) is not working as expected.
-          primary: Colors.green,
+          primary: Color(0xff01c13b),
         ),
       ),
       routerConfig: router(),
