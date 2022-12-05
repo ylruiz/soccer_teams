@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_router/go_router.dart';
 import 'package:styled_text/styled_text.dart';
 
-import '../../../../core/navigation/paths.dart';
 import '../../models/soccer_club_model.dart';
 import '../widgets/soccer_club_image.dart';
 
@@ -24,10 +22,6 @@ class SoccerClubDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => context.go(Paths.soccerClubs),
-          icon: const Icon(Icons.arrow_back),
-        ),
         centerTitle: false,
         title: Text(name),
       ),

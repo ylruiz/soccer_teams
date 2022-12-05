@@ -12,8 +12,8 @@ class _SoccerClubsListView extends StatelessWidget {
       itemCount: soccerClubs.length,
       itemBuilder: (_, index) {
         final soccerClubDetails = soccerClubs[index];
-        return GestureDetector(
-          onTap: () => context.go(
+        return InkWell(
+          onTap: () => context.push(
             Paths.soccerClubDetails,
             extra: soccerClubDetails,
           ),
