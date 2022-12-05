@@ -22,13 +22,9 @@ class SoccerClubsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Text(loca.allAboutClubs),
-            const Spacer(),
-            const SortingIconButton(),
-          ],
-        ),
+        centerTitle: false,
+        title: Text(loca.allAboutClubs),
+        actions: const [SortingIconButton()],
       ),
       body: BlocBuilder<SoccerClubsBloc, SoccerClubsState>(
         builder: (_, state) {
