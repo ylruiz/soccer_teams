@@ -40,12 +40,41 @@
       }
     }
   },
-  "soccerClubValue": "{value} Million", 
+  "soccerClubValue": "{value} Million",
   "@soccerClubValue": {
     "placeholders": {
       "value": {
         "type": "int",
         "example": "200"
+      }
+    }
+  },
+  "retry": "RETRY",
+  "noInternet": "Please check your internet connection and press the <strong>RETRY</strong> button.",
+  "clientError": "There has been an error with the request (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "@clientError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "400"
+      }
+    }
+  },
+  "serverError": "Our server is currently under maintenance. (ERROR CODE: {statusCode}). Please try again in a few minutes. If it doesn't work do not hesitate to contact <a>support</a>.",
+  "@serverError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "500"
+      }
+    }
+  },
+  "undefinedError": "There has been an error in our side (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "@undefinedError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "400"
       }
     }
   }

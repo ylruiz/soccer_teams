@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../core/injection/injection.dart';
+import '../../../../core/network/api_connection_exception.dart';
 import '../../models/soccer_club_model.dart';
 import '../../repositories/soccer_clubs_repo.dart';
 
@@ -16,8 +17,13 @@ part 'soccer_clubs_state.dart';
 ///     [SoccerClubsBloc] and [ApiManager].
 class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
   SoccerClubsBloc() : super(const SoccerClubsState()) {
-    on<LoadSoccerClubs>((event, emit) async => emit(await _loadSoccerClubs()));
-    on<SortSoccerClubsList>((event, emit) => emit(_sortSoccerClubs()));
+    on<LoadSoccerClubs>((_, emit) async {
+      if(state.loadedState == LoadedState.error) {
+        emit(const SoccerClubsState());
+      }
+      emit(await _loadSoccerClubs());
+    });
+    on<SortSoccerClubsList>((_, emit) => emit(_sortSoccerClubs()));
   }
 
   Future<SoccerClubsState> _loadSoccerClubs() async {
@@ -25,7 +31,7 @@ class SoccerClubsBloc extends Bloc<SoccerClubsEvent, SoccerClubsState> {
     return loadedSoccerClubs.fold(
       (error) => state.copyWith(
         loadedState: LoadedState.error,
-        error: error.message,
+        error: error,
       ),
       (soccerClubs) => state.copyWith(
         loadedState: LoadedState.loaded,

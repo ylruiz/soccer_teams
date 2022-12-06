@@ -10,13 +10,17 @@ class SoccerClubsState extends Equatable {
   const SoccerClubsState({
     this.loadedState = LoadedState.loading,
     this.soccerClubs = const [],
-    this.error = '',
+    this.error = const ApiConnectionException(
+      errorType: ApiConnectionErrorType.none,
+      statusCode: -1,
+      statusMessage: '',
+    ),
     this.isSortAscending = true,
   });
 
   final LoadedState loadedState;
   final List<SoccerClubModel> soccerClubs;
-  final String error;
+  final ApiConnectionException error;
   final bool isSortAscending;
 
   @override
@@ -30,7 +34,7 @@ class SoccerClubsState extends Equatable {
   SoccerClubsState copyWith({
     LoadedState? loadedState,
     List<SoccerClubModel>? soccerClubs,
-    String? error,
+    ApiConnectionException? error,
     bool? isSortAscending,
   }) {
     return SoccerClubsState(

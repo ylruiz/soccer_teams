@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:styled_text/styled_text.dart';
 
+import '../../../../core/widgets/tag_styled_text.dart';
 import '../../models/soccer_club_model.dart';
 import '../widgets/soccer_club_image.dart';
 
@@ -50,17 +50,12 @@ class SoccerClubDetailsScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(10),
-            child: StyledText(
+            child: TagStyledText(
               text: loca.soccerClubDetails(
                 name,
                 country,
                 soccerClubDetails.value,
               ),
-              tags: {
-                'strong': StyledTextTag(
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-              },
             ),
           ),
           Padding(

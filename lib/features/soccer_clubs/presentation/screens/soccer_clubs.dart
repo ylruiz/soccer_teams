@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/injection/injection.dart';
 import '../../../../core/navigation/paths.dart';
+import '../../../../core/network/api_connection_exception.dart';
+import '../../../../core/widgets/tag_styled_text.dart';
 import '../../models/soccer_club_model.dart';
 import '../bloc/soccer_clubs_bloc.dart';
 import '../widgets/soccer_club_image.dart';
@@ -12,6 +14,7 @@ import '../widgets/soccer_club_image.dart';
 part '../widgets/sorting_icon_button.dart';
 part '../widgets/loading_progress.dart';
 part '../widgets/soccer_clubs_list.dart';
+part '../widgets/soccer_clubs_error_feedback.dart';
 
 class SoccerClubsScreen extends StatelessWidget {
   const SoccerClubsScreen({super.key});
@@ -37,10 +40,26 @@ class SoccerClubsScreen extends StatelessWidget {
                   ? Center(child: Text(loca.soccerClubsNoFound))
                   : _SoccerClubsListView(soccerClubs: soccerClubs);
             case LoadedState.error:
-              return Center(child: Text(state.error));
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: _SoccerClubsErrorFeedback(error: state.error),
+                  ),
+                  ElevatedButton(
+                    onPressed: _loadSoccerClubs,
+                    child: Text(loca.retry),
+                  ),
+                ],
+              );
           }
         },
       ),
     );
+  }
+
+  void _loadSoccerClubs() {
+    sl<SoccerClubsBloc>().add(LoadSoccerClubs());
   }
 }

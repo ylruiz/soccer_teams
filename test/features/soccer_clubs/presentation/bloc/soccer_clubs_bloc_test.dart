@@ -45,8 +45,9 @@ void main() {
           (_) => Future.value(
             const Left(
               ApiConnectionException(
-                status: 403,
-                message: 'Authorization Error.',
+                errorType: ApiConnectionErrorType.clientError,
+                statusCode: 403,
+                statusMessage: 'Authorization Error.',
               ),
             ),
           ),
@@ -57,7 +58,11 @@ void main() {
       expect: () => [
         const SoccerClubsState(
           loadedState: LoadedState.error,
-          error: 'Authorization Error.',
+          error: ApiConnectionException(
+            errorType: ApiConnectionErrorType.clientError,
+            statusCode: 403,
+            statusMessage: 'Authorization Error.',
+          ),
         )
       ],
     );

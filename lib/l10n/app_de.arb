@@ -1,52 +1,81 @@
 {
-    "allAboutClubs": "all about clubs",
-    "soccerClubsNoFound": "Es wurden keine Fußballvereine gefunden.",
-    "soccerClubDetails": "Der Club <strong>{name}</strong> aus {country} hat einen Wert von {value} Millionen Euro.",
-    "@soccerClubDetails": {
-      "placeholders": {
-        "name": {
-          "type": "String",
-          "example": "Real Madrid"
-        },
-        "country": {
-          "type": "String",
-          "example": "Spain"
-        },
-        "value": {
-          "type": "int",
-          "example": "100"
-        }
+  "allAboutClubs": "all about clubs",
+  "soccerClubsNoFound": "Es wurden keine Fußballvereine gefunden.",
+  "soccerClubDetails": "Der Club <strong>{name}</strong> aus {country} hat einen Wert von {value} Millionen Euro.",
+  "@soccerClubDetails": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Real Madrid"
+      },
+      "country": {
+        "type": "String",
+        "example": "Spain"
+      },
+      "value": {
+        "type": "int",
+        "example": "100"
       }
-    },
-    "soccerClubOneVictory": "{name} konnte bislang 1 Seig auf europäischer Ebene erreichen.",
-    "@soccerClubOneVictory": {
-      "placeholders": {
-        "name": {
-          "type": "String",
-          "example": "Real Madrid"
-        }
+    }
+  },
+  "soccerClubOneVictory": "{name} konnte bislang 1 Seig auf europäischer Ebene erreichen.",
+  "@soccerClubOneVictory": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Real Madrid"
       }
-    },
-    "soccerClubVictories": "{name} konnte bislang {europeanTitles} auf europäischer Ebene erreichen.",
-    "@soccerClubVictories": {
-      "placeholders": {
-        "name": {
-          "type": "String",
-          "example": "Real Madrid"
-        },
-        "europeanTitles": {
-          "type": "int",
-          "example": "2"
-        }
+    }
+  },
+  "soccerClubVictories": "{name} konnte bislang {europeanTitles} auf europäischer Ebene erreichen.",
+  "@soccerClubVictories": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Real Madrid"
+      },
+      "europeanTitles": {
+        "type": "int",
+        "example": "2"
       }
-    },
-    "soccerClubValue": "{value} Millionen", 
-    "@soccerClubValue": {
-      "placeholders": {
-        "value": {
-          "type": "int",
-          "example": "200"
-        }
+    }
+  },
+  "soccerClubValue": "{value} Millionen",
+  "@soccerClubValue": {
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "200"
+      }
+    }
+  },
+  "retry": "RETRY",
+  "noInternet": "Please check your internet connection and press the <strong>RETRY</strong> button.",
+  "clientError": "There has been an error with the request (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "@clientError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "400"
+      }
+    }
+  },
+  "serverError": "Our server is currently under maintenance. (ERROR CODE: {statusCode}). Please try again in a few minutes. If it doesn't work do not hesitate to contact <a>support</a>.",
+  "@serverError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "500"
+      }
+    }
+  },
+  "undefinedError": "There has been an error in our side (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "@undefinedError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "400"
       }
     }
   }
+}
