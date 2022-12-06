@@ -60,7 +60,7 @@
       }
     }
   },
-  "serverError": "Our server is currently under maintenance. (ERROR CODE: {statusCode}). Please try again in a few minutes. If it doesn't work do not hesitate to contact <a>support</a>.",
+  "serverError": "Our server is currently under maintenance (ERROR CODE: {statusCode}). Please try again in a few minutes. If it doesn't work do not hesitate to contact <a>support</a>.",
   "@serverError": {
     "placeholders": {
       "statusCode": {

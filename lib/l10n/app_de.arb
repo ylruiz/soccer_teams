@@ -49,9 +49,9 @@
       }
     }
   },
-  "retry": "RETRY",
-  "noInternet": "Please check your internet connection and press the <strong>RETRY</strong> button.",
-  "clientError": "There has been an error with the request (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "retry": "WIEDERHOLEN",
+  "noInternet": "Bitte überprüfen Sie Ihre Internetverbindung und drücken Sie die Taste <strong>WIEDERHOLEN</strong>.",
+  "clientError": "Hier ist ein Fehler bei der Anfrage aufgetreten (ERROR CODE: {statusCode}). Bitte kontaktieren Sie <a>den Support</a>.",
   "@clientError": {
     "placeholders": {
       "statusCode": {
@@ -60,7 +60,7 @@
       }
     }
   },
-  "serverError": "Our server is currently under maintenance. (ERROR CODE: {statusCode}). Please try again in a few minutes. If it doesn't work do not hesitate to contact <a>support</a>.",
+  "serverError": "Unser Server wird derzeit gewartet (ERROR CODE: {statusCode}). Unser Server wird derzeit gewartet. Wenn es nicht funktioniert, zögern Sie nicht, <a>den Support</a> zu kontaktieren.",
   "@serverError": {
     "placeholders": {
       "statusCode": {
@@ -69,7 +69,7 @@
       }
     }
   },
-  "undefinedError": "There has been an error in our side (ERROR CODE: {statusCode}). Please contact <a>support</a>.",
+  "undefinedError": "Auf unserer Seite ist ein Fehler aufgetreten (ERROR CODE: {statusCode}). Bitte kontaktieren Sie <a>den Support</a>.",
   "@undefinedError": {
     "placeholders": {
       "statusCode": {
